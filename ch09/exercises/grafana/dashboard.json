@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "panels": [
     {
@@ -26,6 +25,274 @@
         "w": 24,
         "x": 0,
         "y": 0
+      },
+      "id": 49,
+      "panels": [],
+      "title": "Todo",
+      "type": "row"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 4,
+        "x": 0,
+        "y": 1
+      },
+      "id": 53,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "options": {},
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false,
+        "ymax": null,
+        "ymin": null
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "todo_tasks_created_total",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Items",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "total"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 5,
+        "y": 1
+      },
+      "id": 51,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "http_requests_in_progress",
+          "format": "time_series",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Current requests",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 7,
+        "w": 5,
+        "x": 10,
+        "y": 1
+      },
+      "id": 55,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "sum(http_requests_received_total{code=\"200\"}) without (method)",
+          "refId": "A"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Successful Requests",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 8
       },
       "id": 13,
       "panels": [],
@@ -44,7 +311,7 @@
         "h": 6,
         "w": 5,
         "x": 0,
-        "y": 1
+        "y": 9
       },
       "id": 19,
       "legend": {
@@ -130,7 +397,7 @@
         "h": 6,
         "w": 5,
         "x": 5,
-        "y": 1
+        "y": 9
       },
       "id": 21,
       "legend": {
@@ -215,7 +482,7 @@
         "h": 6,
         "w": 4,
         "x": 10,
-        "y": 1
+        "y": 9
       },
       "id": 15,
       "legend": {
@@ -301,7 +568,7 @@
         "h": 6,
         "w": 4,
         "x": 14,
-        "y": 1
+        "y": 9
       },
       "id": 17,
       "legend": {
@@ -380,7 +647,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 7
+        "y": 15
       },
       "id": 23,
       "title": "Image of the Day API",
@@ -398,7 +665,7 @@
         "h": 6,
         "w": 4,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "id": 25,
       "legend": {
@@ -478,13 +745,15 @@
         "h": 6,
         "w": 3,
         "x": 4,
-        "y": 8
+        "y": 16
       },
       "id": 27,
       "links": [],
       "options": {
         "fieldOptions": {
-          "calcs": ["lastNotNull"],
+          "calcs": [
+            "lastNotNull"
+          ],
           "defaults": {
             "mappings": [
               {
@@ -539,12 +808,14 @@
         "h": 6,
         "w": 3,
         "x": 7,
-        "y": 8
+        "y": 16
       },
       "id": 29,
       "options": {
         "fieldOptions": {
-          "calcs": ["mean"],
+          "calcs": [
+            "mean"
+          ],
           "defaults": {
             "mappings": [],
             "max": 100,
@@ -595,7 +866,7 @@
         "h": 6,
         "w": 4,
         "x": 10,
-        "y": 8
+        "y": 16
       },
       "id": 33,
       "legend": {
@@ -680,7 +951,7 @@
         "h": 6,
         "w": 4,
         "x": 14,
-        "y": 8
+        "y": 16
       },
       "id": 31,
       "legend": {
@@ -760,7 +1031,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 22
       },
       "id": 2,
       "panels": [],
@@ -779,7 +1050,7 @@
         "h": 6,
         "w": 5,
         "x": 0,
-        "y": 15
+        "y": 23
       },
       "id": 5,
       "legend": {
@@ -865,7 +1136,7 @@
         "h": 6,
         "w": 5,
         "x": 5,
-        "y": 15
+        "y": 23
       },
       "id": 7,
       "legend": {
@@ -950,7 +1221,7 @@
         "h": 6,
         "w": 4,
         "x": 10,
-        "y": 15
+        "y": 23
       },
       "id": 9,
       "legend": {
@@ -1036,7 +1307,7 @@
         "h": 6,
         "w": 4,
         "x": 14,
-        "y": 15
+        "y": 23
       },
       "id": 11,
       "legend": {
@@ -1116,7 +1387,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 29
       },
       "id": 35,
       "panels": [],
@@ -1135,7 +1406,7 @@
         "h": 6,
         "w": 4,
         "x": 0,
-        "y": 22
+        "y": 30
       },
       "id": 37,
       "legend": {
@@ -1213,7 +1484,11 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
       "datasource": "Prometheus",
       "format": "none",
       "gauge": {
@@ -1227,7 +1502,7 @@
         "h": 3,
         "w": 3,
         "x": 4,
-        "y": 22
+        "y": 30
       },
       "id": 41,
       "interval": null,
@@ -1292,7 +1567,11 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
       "datasource": "Prometheus",
       "format": "none",
       "gauge": {
@@ -1306,7 +1585,7 @@
         "h": 2,
         "w": 3,
         "x": 7,
-        "y": 22
+        "y": 30
       },
       "id": 45,
       "interval": null,
@@ -1380,7 +1659,7 @@
         "h": 6,
         "w": 4,
         "x": 10,
-        "y": 22
+        "y": 30
       },
       "id": 43,
       "legend": {
@@ -1466,7 +1745,7 @@
         "h": 6,
         "w": 4,
         "x": 14,
-        "y": 22
+        "y": 30
       },
       "id": 42,
       "legend": {
@@ -1543,7 +1822,11 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
       "datasource": "Prometheus",
       "format": "none",
       "gauge": {
@@ -1557,7 +1840,7 @@
         "h": 2,
         "w": 3,
         "x": 7,
-        "y": 24
+        "y": 32
       },
       "id": 46,
       "interval": null,
@@ -1623,7 +1906,11 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
       "datasource": "Prometheus",
       "format": "none",
       "gauge": {
@@ -1637,7 +1924,7 @@
         "h": 3,
         "w": 3,
         "x": 4,
-        "y": 25
+        "y": 33
       },
       "id": 39,
       "interval": null,
@@ -1702,7 +1989,11 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
       "datasource": "Prometheus",
       "format": "none",
       "gauge": {
@@ -1716,7 +2007,7 @@
         "h": 2,
         "w": 3,
         "x": 7,
-        "y": 26
+        "y": 34
       },
       "id": 47,
       "interval": null,
@@ -1806,5 +2097,5 @@
   "timezone": "",
   "title": "Image Gallery",
   "uid": "kb5nhJAZk",
-  "version": 2
+  "version": 1
 }

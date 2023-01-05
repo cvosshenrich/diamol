@@ -25,8 +25,18 @@ services:
     networks:
       - app-net
 
+  todo-list:
+    image: diamol/ch09-todo-list
+    ports:
+      - "8050:80"
+    networks:
+      - app-net
+
   prometheus:
-    image: diamol/ch09-prometheus
+    image: cvosshenrich/prometheus
+    build:
+      context:
+        ./prometheus
     ports:
       - "9090:9090"
     environment:
@@ -35,7 +45,10 @@ services:
       - app-net
 
   grafana:
-    image: diamol/ch09-grafana
+    image: cvosshenrich/grafana
+    build:
+      context:
+        ./grafana
     ports:
       - "3000:3000"
     depends_on:
