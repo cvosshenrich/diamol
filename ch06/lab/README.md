@@ -1,5 +1,16 @@
 # DIAMOL Chapter 6 Lab - Sample Solution
 
+CV: my solution = 
+
+```
+docker run --name todo --rm -d -p 8081:80 -v todo-vol:/new-data -v /root/docker/diamol/ch06/lab/solution:/app/config:ro todo
+```
+
+
+
+
+
+
 If you've been running lots of containers from Chapter 6 and using lots of ports, you can start by tidying up:
 
 > This will remove **ALL** of your containers
